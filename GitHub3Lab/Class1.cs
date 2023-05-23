@@ -104,5 +104,16 @@ namespace GitHub3Lab
             return runDayList;
         }
 
+        public List<int> GetDurations()  // метод для получения списка длительности пробежек за все дни
+        {
+            List<int> durations = new List<int>();
+
+            foreach (var item in runDayList)
+            {
+                durations.Add(item.Duration);
+            }
+
+            return durations;
+        }
     }
 }
