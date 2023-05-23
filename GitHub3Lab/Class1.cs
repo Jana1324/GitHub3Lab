@@ -72,5 +72,32 @@ namespace GitHub3Lab
             }
         }
 
+
+        // Метод для вычисления суммы пройденных км за выходные дни
+        public double CalculateWeekendDistanceSum()
+        {
+            int[] weekendDay = { 6, 7, 13, 14, 20, 21, 27, 28 };  // номера выходных дней
+            List<RunDay> weekendDayList = new List<RunDay>();  // лист выходных дней
+
+            foreach (var item in runDayList)
+            {
+                if (weekendDay.Contains(item.DayOfWeek))
+                {
+                    weekendDayList.Add(item);
+                }
+            }
+
+            double weekendDistanceSum = 0;
+            foreach (var item in weekendDayList)
+            {
+                weekendDistanceSum += item.Distance;
+            }
+
+            if (weekendDistanceSum != 0)
+                return weekendDistanceSum;
+            else
+                return 0;
+        }
+
     }
 }
