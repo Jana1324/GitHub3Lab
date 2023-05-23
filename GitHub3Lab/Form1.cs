@@ -21,5 +21,32 @@ namespace GitHub3Lab
         {
 
         }
+
+        private TempProcessing tempProcessing;
+
+        List<string> OutputTempList = new List<string>(); // список всех дней
+
+        public void DisplayTempDay()
+        {
+            List<TempDate> tempDataList = tempProcessing.GetTempDayList();
+
+            if (tempDataList.Count > 0)
+            {
+                foreach (var item in tempDataList)
+                {
+                    string output = string.Format("{0}: Максимальная температура: {1} градусов; Минимальная температура: {2} градусов; " +
+                        "Средняя температура: {3} градусов",
+                        item.Date.ToString("d"), item.MaxTemperature, item.MaxTemperature, item.AvgTemperature);
+
+                    OutputTempList.Add(output);
+                    listBoxTemp.Items.Add(output);
+                }
+                TemperatureCalc.Text = tempProcessing.FindLargestTemperatureChange();
+            }
+            else
+            {
+                MessageBox.Show("Файл не содержит данных!");
+            }
+        }
     }
 }
