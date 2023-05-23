@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GitHub3Lab
 {
@@ -18,6 +19,16 @@ namespace GitHub3Lab
         }
 
         private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonOpenFileRun_Click(object sender, EventArgs e)
         {
 
         }
