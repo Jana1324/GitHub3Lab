@@ -115,5 +115,17 @@ namespace GitHub3Lab
 
             return durations;
         }
+
+        public List<double> GetDistances()   // метод для получения списка дистанции пробежек за все дни
+        {
+            List<double> distances = new List<double>();
+
+            foreach (var item in runDayList)
+            {
+                distances.Add(item.Distance);
+            }
+
+            return distances;
+        }
     }
 }
