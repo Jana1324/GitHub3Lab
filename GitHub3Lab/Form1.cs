@@ -17,6 +17,9 @@ namespace GitHub3Lab
             InitializeComponent();
         }
 
+        private void chart1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
