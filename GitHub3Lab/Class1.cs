@@ -99,5 +99,10 @@ namespace GitHub3Lab
                 return 0;
         }
 
+        public List<RunDay> GetRunDayList()  // метод для получения списка всех дней
+        {
+            return runDayList;
+        }
+
     }
 }
