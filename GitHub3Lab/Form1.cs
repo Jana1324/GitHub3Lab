@@ -95,7 +95,7 @@ namespace GitHub3Lab
             }
         }
 
-        private void buttonOpenFileRun_Click(object sender, EventArgs e)
+        private void buttonOpenFileRun_Click(object sender, EventArgs e)  // открытие файла
         {
             listBoxRun.Items.Clear();
             DistanceCalc.Text = "Пройдено за выходные: ";
@@ -110,7 +110,18 @@ namespace GitHub3Lab
 
         private void OutputRun_Click(object sender, EventArgs e)
         {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filename = saveFileDialog1.FileName;
+                StringBuilder builder = new StringBuilder();
 
+                foreach (var item in OutputRunList)
+                {
+                    builder.Append(item + "\n");
+                }
+                File.WriteAllText(filename, builder.ToString());
+                MessageBox.Show("Файл записан");
+            }
         }
     }
 }
