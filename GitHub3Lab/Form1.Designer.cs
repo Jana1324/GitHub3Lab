@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.OutputRun = new System.Windows.Forms.Button();
             this.buttonOpenFileRun = new System.Windows.Forms.Button();
             this.DistanceCalc = new System.Windows.Forms.Label();
@@ -36,6 +39,10 @@
             this.OutputTemp = new System.Windows.Forms.Button();
             this.TemperatureCalc = new System.Windows.Forms.Label();
             this.buttonOpenFileTemp = new System.Windows.Forms.Button();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // OutputRun
@@ -138,11 +145,32 @@
             this.buttonOpenFileTemp.Text = "Открыть файл температур";
             this.buttonOpenFileTemp.UseVisualStyleBackColor = false;
             // 
+            // chart2
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(787, 81);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(645, 300);
+            this.chart2.TabIndex = 37;
+            this.chart2.Text = "chart1";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1467, 732);
+            this.Controls.Add(this.chart2);
             this.Controls.Add(this.listBoxTemp);
             this.Controls.Add(this.OutputTemp);
             this.Controls.Add(this.TemperatureCalc);
@@ -153,6 +181,7 @@
             this.Controls.Add(this.buttonOpenFileRun);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +197,8 @@
         private System.Windows.Forms.Button OutputTemp;
         private System.Windows.Forms.Label TemperatureCalc;
         private System.Windows.Forms.Button buttonOpenFileTemp;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
     }
 }
