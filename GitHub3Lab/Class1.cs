@@ -36,5 +36,41 @@ namespace GitHub3Lab
         {
         }
 
+        // Метод для чтения данных из файла
+        public void ReadFromFile()
+        {
+            int dayOfWeek = 1;
+            try
+            {
+                // чтения всех строк из текстового файла 
+                string[] lines = File.ReadAllLines(filePath); // каждый элемент массива представляет отдельную строку из файла
+
+                foreach (string line in lines)
+                {
+                    // каждый элемент массива будет содержать одно из значений
+                    string[] values = line.Split(' ');
+
+
+                    RunDay runDate = new RunDay
+                    {
+                        Duration = int.Parse(values[0]),
+                        Distance = double.Parse(values[1]),
+                        MaxSpeed = double.Parse(values[2]),
+                        MinSpeed = double.Parse(values[3]),
+                        AvgSpeed = double.Parse(values[4]),
+                        AvgPulse = double.Parse(values[5]),
+                        DayOfWeek = dayOfWeek
+                    };
+
+                    runDayList.Add(runDate);
+                    ++dayOfWeek;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка при чтении. Проверьте данные на корректность.");
+            }
+        }
+
     }
 }
