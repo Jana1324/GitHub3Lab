@@ -55,5 +55,30 @@ namespace GitHub3Lab
 
             }
         }
+        public string FindLargestTemperatureChange()
+        {
+            double largestChange = 0;
+            TempDate largestChangeData = null;
+
+            for (int i = 0; i < tempDayList.Count - 1; i++)
+            {
+                double temperatureChange = Math.Abs(tempDayList[i].MaxTemperature - tempDayList[i].MinTemperature);
+
+                if (temperatureChange > largestChange)
+                {
+                    largestChange = temperatureChange;
+                    largestChangeData = tempDayList[i];
+                }
+            }
+
+            string str = string.Format("Самый сильный перепад температуры был : {0} - {1} градусов", largestChangeData.Date.ToString("d"), largestChange);
+            return str;
+        }
+
+        // метод для получения списка всех дней 
+        public List<TempDate> GetTempDayList()
+        {
+            return tempDayList;
+        }
     }
-    }
+}
